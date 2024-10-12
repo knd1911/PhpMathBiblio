@@ -1,0 +1,1 @@
+{"version":1,"defects":{"CoreMathTest::testMatrixAddition":4,"CoreMathTest::testStressCalculation":4},"times":{"CoreMathTest::testMatrixAddition":0.002,"CoreMathTest::testStressCalculation":0}}

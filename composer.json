@@ -1,0 +1,18 @@
+{
+    "name": "knd/php-math-biblio",
+    "description": "Une bibliothèque mathématique complète conçue pour offrir des solutions efficaces et précises aux opérations et algorithmes mathématiques courants. La bibliothèque comprend des fonctionnalités pour l'arithmétique de base, l'algèbre, le calcul, les opérations sur les matrices et les calculs statistiques. Elle est idéale pour les développeurs ayant besoin d'outils mathématiques fiables pour le calcul scientifique, l'analyse de données ou d'autres applications.",
+    "autoload": {
+        "psr-4": {
+            "Knd\\PhpMathBiblio\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "knd1911",
+            "email": "kouandaachraf01@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^11.4"
+    }
+}

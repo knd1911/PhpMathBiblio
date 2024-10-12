@@ -1,0 +1,293 @@
+PhpMathBiblio
+
+Knd\PhpMathBiblio est une bibliothèque PHP qui offre des méthodes pour réaliser divers calculs en mathématiques et en physique. Elle comprend des classes pour l'électromagnétisme, la dynamique des fluides, l'ingénierie mécanique, l'ingénierie civile et des opérations mathématiques de base.
+Installation
+
+Assurez-vous d'avoir PHP installé sur votre machine. Vous pouvez ajouter cette bibliothèque à votre projet via Composer :
+
+bash
+
+composer require knd/php-math-biblio
+
+Classes et Méthodes
+1. Electromagnetism
+
+Cette classe fournit des méthodes pour effectuer des calculs d'électromagnétisme.
+Méthodes
+
+    coulombsLaw
+
+    Calcule la force électrostatique entre deux charges.
+
+    php
+
+public static function coulombsLaw(float $charge1, float $charge2, float $distance): float
+
+faradaysLaw
+
+Calcule la force électromotrice induite selon la loi de Faraday.
+
+php
+
+    public static function faradaysLaw(float $fluxChange, float $timeChange): float
+
+Exemple d'utilisation
+
+php
+
+use Knd\PhpMathBiblio\Electromagnetism;
+
+// Loi de Coulomb
+$force = Electromagnetism::coulombsLaw(1e-6, 2e-6, 0.1);
+echo "Force électrostatique: $force N\n";
+
+// Loi de Faraday
+$emf = Electromagnetism::faradaysLaw(0.05, 2);
+echo "Force électromotrice: $emf V\n";
+
+2. FluidDynamics
+
+Cette classe contient des méthodes pour effectuer des calculs en dynamique des fluides.
+Méthodes
+
+    bernoulliEquation
+
+    Calcule la pression en utilisant l'équation de Bernoulli.
+
+    php
+
+public static function bernoulliEquation(float $pressure1, float $velocity1, float $pressure2, float $velocity2, float $density): float
+
+volumetricFlowRate
+
+Calcule le débit volumique.
+
+php
+
+    public static function volumetricFlowRate(float $area, float $velocity): float
+
+Exemple d'utilisation
+
+php
+
+use Knd\PhpMathBiblio\FluidDynamics;
+
+// Équation de Bernoulli
+$pressure = FluidDynamics::bernoulliEquation(101325, 10, 0, 15, 1.225);
+echo "Pression calculée: $pressure Pa\n";
+
+// Débit volumique
+$flowRate = FluidDynamics::volumetricFlowRate(0.1, 5);
+echo "Débit volumique: $flowRate m³/s\n";
+
+3. MechanicalEngineering
+
+Cette classe fournit des méthodes pour effectuer des calculs en ingénierie mécanique.
+Méthodes
+
+    calculateForce
+
+    Calcule la force à partir de la masse et de l'accélération.
+
+    php
+
+public static function calculateForce(float $mass, float $acceleration): float
+
+calculateMoment
+
+Calcule le moment à partir de la force et de la distance.
+
+php
+
+public static function calculateMoment(float $force, float $distance): float
+
+calculateKineticEnergy
+
+Calcule l'énergie cinétique.
+
+php
+
+public static function calculateKineticEnergy(float $mass, float $velocity): float
+
+calculatePower
+
+Calcule la puissance.
+
+php
+
+public static function calculatePower(float $force, float $velocity): float
+
+calculateWork
+
+Calcule le travail effectué.
+
+php
+
+public static function calculateWork(float $force, float $distance, float $angle = 0): float
+
+calculatePressure
+
+Calcule la pression.
+
+php
+
+public static function calculatePressure(float $force, float $area): float
+
+calculateMomentOfInertia
+
+Calcule le moment d'inertie.
+
+php
+
+public static function calculateMomentOfInertia(array $masses, array $distances): float
+
+calculateNaturalFrequency
+
+Calcule la fréquence naturelle.
+
+php
+
+public static function calculateNaturalFrequency(float $stiffness, float $mass): float
+
+calculateElasticDeformation
+
+Calcule la déformation élastique.
+
+php
+
+public static function calculateElasticDeformation(float $force, float $originalLength, float $modulusOfElasticity, float $area): float
+
+calculateConcreteResistance
+
+Calcule la résistance d'un béton.
+
+php
+
+    public static function calculateConcreteResistance(float $concreteStrength, float $area): float
+
+Exemple d'utilisation
+
+php
+
+use Knd\PhpMathBiblio\MechanicalEngineering;
+
+// Force
+$force = MechanicalEngineering::calculateForce(10, 9.81);
+echo "Force: $force N\n";
+
+// Moment
+$moment = MechanicalEngineering::calculateMoment($force, 2);
+echo "Moment: $moment Nm\n";
+
+// Énergie cinétique
+$kineticEnergy = MechanicalEngineering::calculateKineticEnergy(10, 15);
+echo "Énergie cinétique: $kineticEnergy J\n";
+
+// Puissance
+$power = MechanicalEngineering::calculatePower($force, 3);
+echo "Puissance: $power W\n";
+
+// Travail
+$work = MechanicalEngineering::calculateWork($force, 5);
+echo "Travail: $work J\n";
+
+// Pression
+$pressure = MechanicalEngineering::calculatePressure($force, 2);
+echo "Pression: $pressure Pa\n";
+
+// Moment d'inertie
+$inertia = MechanicalEngineering::calculateMomentOfInertia([2, 3], [1, 2]);
+echo "Moment d'inertie: $inertia kg·m²\n";
+
+// Fréquence naturelle
+$frequency = MechanicalEngineering::calculateNaturalFrequency(1000, 10);
+echo "Fréquence naturelle: $frequency Hz\n";
+
+// Déformation élastique
+$deformation = MechanicalEngineering::calculateElasticDeformation(500, 2, 200e9, 0.01);
+echo "Déformation élastique: $deformation m\n";
+
+// Résistance du béton
+$concreteResistance = MechanicalEngineering::calculateConcreteResistance(25, 0.5);
+echo "Capacité portante du béton: $concreteResistance kg\n";
+
+4. CivilEngineering
+
+La classe CivilEngineering fournit des méthodes pour effectuer des calculs liés à l'ingénierie civile, notamment le calcul de la contrainte, de la déformation, de la flèche des poutres, ainsi que des méthodes pour calculer le nombre de briques et le temps de maçonnerie.
+Méthodes
+
+    stress
+
+    Calcule la contrainte en pascals (Pa).
+
+    php
+
+public static function stress(float $force, float $area): float
+
+strain
+
+Calcule la déformation (sans unité).
+
+php
+
+public static function strain(float $deltaLength, float $originalLength): float
+
+beamDeflection
+
+Calcule la flèche d'une poutre en mètres (m).
+
+php
+
+public static function beamDeflection(float $load, float $length, float $elasticityModulus, float $inertia): float
+
+calculateBricks
+
+Calcule le nombre de briques nécessaires pour un mur.
+
+php
+
+public static function calculateBricks(float $length, float $height, float $brickLength, float $brickHeight, float $jointThickness): int
+
+calculateMasonryTime
+
+Calcule le temps nécessaire pour maçonner un certain nombre de briques.
+
+php
+
+    public static function calculateMasonryTime(int $numberOfBricks, int $bricksPerDay): float
+
+5. CoreMath
+
+La classe CoreMath fournit des méthodes pour effectuer des opérations mathématiques de base, y compris l'addition et la multiplication de matrices, ainsi que la résolution de systèmes d'équations linéaires.
+Méthodes
+
+    matrixAdd
+
+    Additionne deux matrices.
+
+    php
+
+public static function matrixAdd(array $matrixA, array $matrixB): array
+
+matrixMultiply
+
+Multiplie deux matrices.
+
+php
+
+public static function matrixMultiply(array $matrixA, array $matrixB): array
+
+solveLinearSystem
+
+Résout un système d'équations linéaires par la méthode de Gauss.
+
+php
+
+    public static function solveLinearSystem(array $matrix, array $rhs): array
+
+Contributions
+
+Les contributions sont les bienvenues ! N'hésitez pas à soumettre des problèmes et des demandes de tirage.
+License
+
+Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
